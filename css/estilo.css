@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.inicio {
+    background-size: 400% 100%;
+    animation: marea-horizontal 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes marea-horizontal {
+    0% {
+        background: linear-gradient(to right, #c7b8ea 0%, #fff599 100%);
+    }
+    50% {
+        background: linear-gradient(to right, #d2c4f7 0%, #ffe0b2 100%);
+    }
+    100% {
+        background: linear-gradient(to right, #c7b8ea 0%, #fff599 100%);
+    }
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 45px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #34495e;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 2px solid #34495e;
+    border-radius: 9px;
+    outline: none;
+    width: 100%;
+    max-width: 250px; 
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #85929e;
+}
+
+/* Estilos para la página de flores */
+.flores {
+    background-size: 400% 100%;
+    animation: marea-horizontal1 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes marea-horizontal1 {
+    0% {
+        background: linear-gradient(to right, #c7b8ea 0%, #fff599 100%);
+    }
+    50% {
+        background: linear-gradient(to right, #d2c4f7 0%, #ffe0b2 100%);
+    }
+    100% {
+        background: linear-gradient(to right, #c7b8ea 0%, #fff599 100%);
+    }
+}
+
+.flower {
+    position: absolute;
+    width: 80px; /* Aumenta el tamaño total de la flor para mejor proporción */
+    height: 80px; /* Aumenta el tamaño total de la flor para mejor proporción */
+}
+
+.petal {
+    position: absolute;
+    width: 30px; /* Aumenta el ancho del pétalo */
+    height: 50px; /* Aumenta la altura del pétalo */
+    background-color: #f7dc6f;
+    border-radius: 50%;
+    transform-origin: 50% 100%;
+    top: 0; /* Pétalos comienzan desde la parte superior */
+    left: 50%; /* Centro horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro */
+}
+
+.message {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #34495e;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.card {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.card-body {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #34495e;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#responseMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f0f0f0;
+    position: absolute;
+    animation: confetti-fall 3s ease-out infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.sad-face {
+    position: absolute;
+    font-size: 20px;
+    color: #555;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    input, button {
+        width: 90%; /* Hacer los elementos más anchos en dispositivos más pequeños */
+        max-width: none; /* Quitar el límite de ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em; /* Ajustar el tamaño de la fuente */
+    }
+    .message {
+        font-size: 1em; /* Ajustar tamaño de mensaje */
+    }
+}
+
+/* From Uiverse.io by Web-Potato */ 
+button1 {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: white;
+    border: 0.08em solid #34495e;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  button1 span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: white;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #34495e;
+    border: 0.08em solid #34495e;
+    box-shadow: 0 0.4em 0.1em 0.019em #34495e;
+  }
+  
+  button1 span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #34495e;
+  }
+  
+  button1 span:not(hover) {
+    transition: all 1s;
+  }
+
+.back-button-container {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 50%; /* Espacio desde la parte superior */
+    left: 20px; /* Espacio desde la izquierda */
+    transform: translateY(-50%);
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #34495e; /* Color de fondo */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.back-button:hover {
+    background-color: #706b88; /* Color al pasar el mouse */
+}
+
+
